@@ -1,0 +1,17 @@
+#!/bin/bash
+
+set -o errexit
+set -o pipefail
+set -o nounset
+
+echo "start"
+#python /app/manage.py collectstatic --noinput
+
+
+# async
+#/usr/local/bin/gunicorn config.asgi --bind 0.0.0.0:5000 --chdir=/app -k uvicorn.workers.UvicornWorker
+#/usr/local/bin/gunicorn config.wsgi --bind 0.0.0.0:5000 --chdir=/app
+
+python /app/manage.py migrate
+python /app/manage.py runserver 0.0.0.0:5000
+echo "start end"
