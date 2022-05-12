@@ -35,9 +35,8 @@ sudo docker build -t django .
 
 ## run container locally
 ```shell
-docker container run -d -p 5000:5000 django:latest
+docker container run -d -p 5000:5000 django:latest /start
 ```
-[Open in Browser](http://localhost:5000)
 
 ## clean up old containers
 ```shell
@@ -45,9 +44,11 @@ docker rm $(docker ps -a -q)
 ```
 
 ## GET
+[GET - open in Browser](http://localhost:5000)
 ![GET](docs/img/get_root.jpg)
 
 ## /add
+[/add - open in Browser](http://localhost:5000/add)
 ![GET](docs/img/add_item_post_1.jpg)
 
 ## /add after post
